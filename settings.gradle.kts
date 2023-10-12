@@ -14,6 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Ex"
+rootProject.name = "EX"
 include(":app")
+include(":core")
 include(":widget")
