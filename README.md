@@ -19,13 +19,6 @@ Interface :
 Dependencies Injection :
 - Hilt
 
-Remote Service :
-- Retrofit
-- Gson
-
-Local Service :
-- Room
-
 Design :
 - Clean Architecture
 - Modularization
