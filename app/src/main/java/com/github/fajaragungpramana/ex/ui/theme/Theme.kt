@@ -14,27 +14,37 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import com.github.fajaragungpramana.ex.widget.style.Black100
+import com.github.fajaragungpramana.ex.widget.style.Gray10
+import com.github.fajaragungpramana.ex.widget.style.Green100
+import com.github.fajaragungpramana.ex.widget.style.Green50
+import com.github.fajaragungpramana.ex.widget.style.Typography
+import com.github.fajaragungpramana.ex.widget.style.White100
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = Green100,
+    secondary = Green50,
+    tertiary = Green100,
+    background = Black100,
+    surface = Black100,
+    onPrimary = Black100,
+    onSecondary = Black100,
+    onTertiary = Black100,
+    onBackground = Black100,
+    onSurface = Black100
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = Green100,
+    secondary = Green50,
+    tertiary = Green100,
+    background = Gray10,
+    surface = Gray10,
+    onPrimary = White100,
+    onSecondary = White100,
+    onTertiary = White100,
+    onBackground = Gray10,
+    onSurface = Gray10
 )
 
 @Composable
