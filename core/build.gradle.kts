@@ -1,15 +1,16 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    id(Plugin.LIBRARY)
+    id(Plugin.KOTLIN_ANDROID)
+    id(Plugin.KOTLIN_KAPT)
+    id(Plugin.HILT)
 }
 
 android {
     namespace = "com.github.fajaragungpramana.ex.core"
-    compileSdk = 34
+    compileSdk = Version.SDK
 
     defaultConfig {
-        minSdk = 21
+        minSdk = Version.MIN_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -35,7 +36,11 @@ android {
 
 dependencies {
 
+    api(platform(Dependency.Firebase.BOM))
+    api(Dependency.Firebase.ANALYTIC)
 
+    implementation(Dependency.Google.HILT)
+    kapt(Dependency.Google.HILT_COMPILER)
 
 }
 

@@ -1,20 +1,21 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.gms.google-services")
-    id("kotlin-kapt")
+    id(Plugin.APPLICATION)
+    id(Plugin.KOTLIN_ANDROID)
+    id(Plugin.KOTLIN_KAPT)
+    id(Plugin.GOOGLE_SERVICE)
+    id(Plugin.HILT)
 }
 
 android {
     namespace = "com.github.fajaragungpramana.ex"
-    compileSdk = 34
+    compileSdk = Version.SDK
 
     defaultConfig {
         applicationId = "com.github.fajaragungpramana.ex"
-        minSdk = 21
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        minSdk = Version.MIN_SDK
+        targetSdk = Version.SDK
+        versionCode = Version.APP_CODE
+        versionName = Version.APP_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -53,21 +54,21 @@ android {
 
 dependencies {
 
-    implementation(project(":core"))
-    implementation(project(":widget"))
+    implementation(project(Module.LIBRARY_CORE))
+    implementation(project(Module.LIBRARY_WIDGET))
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation(Dependency.AndroidX.CORE_KTX)
+    implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME_KTX)
 
-    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
-    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation(Dependency.Google.HILT)
+    kapt(Dependency.Google.HILT_COMPILER)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    testImplementation(Dependency.Test.JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+    androidTestImplementation(platform(Dependency.AndroidX.COMPOSE_BOM))
+    androidTestImplementation(Dependency.AndroidTest.COMPOSE_UI_TEST_JUNIT)
+    debugImplementation(Dependency.Debug.COMPOSE_UI_TOOLING)
+    debugImplementation(Dependency.Debug.COMPOSE_UI_TEST_MANIFEST)
 
 }

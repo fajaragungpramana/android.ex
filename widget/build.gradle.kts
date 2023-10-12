@@ -1,15 +1,15 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    id(Plugin.LIBRARY)
+    id(Plugin.KOTLIN_ANDROID)
+    id(Plugin.KOTLIN_KAPT)
 }
 
 android {
     namespace = "com.github.fajaragungpramana.ex.widget"
-    compileSdk = 34
+    compileSdk = Version.SDK
 
     defaultConfig {
-        minSdk = 21
+        minSdk = Version.MIN_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -38,13 +38,13 @@ android {
 
 dependencies {
 
-    api("androidx.activity:activity-compose:1.8.0")
+    api(Dependency.AndroidX.ACTIVITY_COMPOSE)
 
-    api(platform("androidx.compose:compose-bom:2023.03.00"))
-    api("androidx.compose.ui:ui")
-    api("androidx.compose.ui:ui-graphics")
-    api("androidx.compose.ui:ui-tooling-preview")
-    api("androidx.compose.material3:material3")
+    api(platform(Dependency.AndroidX.COMPOSE_BOM))
+    api(Dependency.AndroidX.COMPOSE_UI)
+    api(Dependency.AndroidX.COMPOSE_UI_GRAPHIC)
+    api(Dependency.AndroidX.COMPOSE_UI_TOOLING_PREVIEW)
+    api(Dependency.AndroidX.COMPOSE_MATERIAL)
 
 }
 
