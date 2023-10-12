@@ -3,7 +3,7 @@
 App for management money expenses in `Android Platform`.
 
 ## Project Setup
-If you want to run this project you need setup this project with `Firebase`, because this project use it as database.</br>
+If you are want to run this project, you need to setup this project with `Firebase`, because this project use it as database.</br>
 - Create Firebase Project.
 - Add your SHA1 to the Firebase Project.
 - And download and paste the `google-services.json` to `project` inside module `app`.
