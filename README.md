@@ -7,6 +7,7 @@ If you want to run this project you need setup this project with `Firebase`, bec
 - Create Firebase Project.
 - Add your SHA1 to the Firebase Project.
 - And download and paste the `google-services.json` to `project` inside module `app`.
+- Build and Run the app.
 
 ## Tech Information
 Language :
