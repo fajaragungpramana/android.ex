@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EX</string>
+    <string name="manage_your_expense">Manage Your Expense</string>
+    <string name="version_app">Version %1$s</string>
 </resources>
