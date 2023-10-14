@@ -31,6 +31,9 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        compose = true
+    }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.3"
     }
@@ -45,6 +48,7 @@ dependencies {
     api(Dependency.AndroidX.COMPOSE_UI_GRAPHIC)
     api(Dependency.AndroidX.COMPOSE_UI_TOOLING_PREVIEW)
     api(Dependency.AndroidX.COMPOSE_MATERIAL)
+    api(Dependency.AndroidX.COMPOSE_MATERIAL_ICON_EXTENDED)
 
 }
 

@@ -20,6 +20,18 @@ val Typography = Typography(
         fontSize = 40.sp,
         color = Black100
     ),
+    titleLarge = TextStyle(
+        fontFamily = PoppinsFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 24.sp,
+        color = Black100
+    ),
+    titleMedium = TextStyle(
+        fontFamily = PoppinsFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 16.sp,
+        color = White100
+    ),
     bodyMedium = TextStyle(
         fontFamily = PoppinsFamily,
         fontWeight = FontWeight.Normal,
