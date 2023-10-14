@@ -40,6 +40,7 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -59,6 +60,7 @@ dependencies {
 
     implementation(Dependency.AndroidX.CORE_KTX)
     implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependency.AndroidX.NAVIGATION_COMPOSE)
 
     implementation(Dependency.Google.HILT)
     kapt(Dependency.Google.HILT_COMPILER)
