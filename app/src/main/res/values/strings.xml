@@ -2,4 +2,11 @@
     <string name="app_name">EX</string>
     <string name="manage_your_expense">Manage Your Expense</string>
     <string name="version_app">Version %1$s</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_description">Sign in to continue with your account.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="not_have_an_account">Don’t have an account?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
