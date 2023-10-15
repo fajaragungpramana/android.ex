@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.github.fajaragungpramana.ex.ui.auth.signin.SignInView
+import com.github.fajaragungpramana.ex.ui.auth.signup.SignUpView
 import com.github.fajaragungpramana.ex.ui.loading.LoadingView
 import com.github.fajaragungpramana.ex.ui.theme.ExTheme
 
@@ -44,6 +45,12 @@ class MainActivity : ComponentActivity() {
 
                         composable(MainViewRoute.SignInView.route) {
                             SignInView.ContentView(
+                                navController = navController
+                            )
+                        }
+
+                        composable(MainViewRoute.SignUpView.route) {
+                            SignUpView.ContentView(
                                 navController = navController
                             )
                         }
