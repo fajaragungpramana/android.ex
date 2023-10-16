@@ -16,4 +16,6 @@
     <string name="home">Home</string>
     <string name="statistic">Statistic</string>
     <string name="profile">Profile</string>
+    <string name="camera">Camera</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

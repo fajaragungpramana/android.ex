@@ -11,4 +11,7 @@ val Green50 = Color(0xFFAFE1CF)
 val Black100 = Color(0xFF0B0B0B)
 val Black50 = Color(0xFF6D6D6D)
 
+val Red100 = Color(0xFFFF6464)
+val Red50 = Color(0xFFFFBABA)
+
 val White100 = Color(0xFFFFFFFF)
