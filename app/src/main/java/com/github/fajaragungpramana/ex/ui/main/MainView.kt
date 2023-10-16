@@ -3,6 +3,8 @@ package com.github.fajaragungpramana.ex.ui.main
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -31,16 +33,29 @@ import com.github.fajaragungpramana.ex.ui.theme.ExTheme
 
 object MainView {
 
+    @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun ContentView(navController: NavController?) {
         var navigationSelectedItem by remember { mutableIntStateOf(0) }
         val bottomNavController = rememberNavController()
 
+        val listBottomNavigationItem = BottomNavigationItem.data()
+
         Scaffold(
+            topBar = {
+                CenterAlignedTopAppBar(
+                    title = {
+                        Text(
+                            text = stringResource(id = listBottomNavigationItem[navigationSelectedItem].label),
+                            style = MaterialTheme.typography.titleLarge
+                        )
+                    }
+                )
+            },
             bottomBar = {
                 NavigationBar {
 
-                    BottomNavigationItem.data().forEachIndexed { index, bottomNavigationItem ->
+                    listBottomNavigationItem.forEachIndexed { index, bottomNavigationItem ->
 
                         NavigationBarItem(
                             selected = index == navigationSelectedItem,
