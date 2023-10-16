@@ -30,6 +30,12 @@ object Dependency {
     object Firebase {
         const val BOM = "com.google.firebase:firebase-bom:32.3.1"
         const val ANALYTIC = "com.google.firebase:firebase-analytics-ktx"
+        const val AUTH = "com.google.firebase:firebase-auth-ktx"
+        const val FIRESTORE = "com.google.firebase:firebase-firestore-ktx"
+    }
+
+    object Github {
+        const val TIMBER = "com.jakewharton.timber:timber:5.0.1"
     }
 
     object Google {
