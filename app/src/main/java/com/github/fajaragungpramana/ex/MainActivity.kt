@@ -16,7 +16,9 @@ import com.github.fajaragungpramana.ex.ui.auth.signup.SignUpView
 import com.github.fajaragungpramana.ex.ui.loading.LoadingView
 import com.github.fajaragungpramana.ex.ui.main.MainView
 import com.github.fajaragungpramana.ex.ui.theme.ExTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

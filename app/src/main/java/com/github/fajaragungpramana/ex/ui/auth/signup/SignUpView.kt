@@ -27,6 +27,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.github.fajaragungpramana.ex.R
 import com.github.fajaragungpramana.ex.ui.theme.ExTheme
@@ -38,6 +39,8 @@ object SignUpView {
 
     @Composable
     fun ContentView(navController: NavController?) {
+        val viewModel: SignUpViewModel = hiltViewModel()
+
         Scaffold(
             topBar = {
 

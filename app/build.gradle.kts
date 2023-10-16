@@ -60,6 +60,7 @@ dependencies {
 
     implementation(Dependency.AndroidX.CORE_KTX)
     implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependency.AndroidX.COMPOSE_HILT)
     implementation(Dependency.AndroidX.NAVIGATION_COMPOSE)
 
     implementation(Dependency.Google.HILT)
