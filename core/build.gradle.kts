@@ -38,6 +38,10 @@ dependencies {
 
     api(platform(Dependency.Firebase.BOM))
     api(Dependency.Firebase.ANALYTIC)
+    api(Dependency.Firebase.AUTH)
+    api(Dependency.Firebase.FIRESTORE)
+
+    api(Dependency.Github.TIMBER)
 
     implementation(Dependency.Google.HILT)
     kapt(Dependency.Google.HILT_COMPILER)
