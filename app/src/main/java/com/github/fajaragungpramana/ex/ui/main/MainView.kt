@@ -12,6 +12,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -30,6 +31,8 @@ import com.github.fajaragungpramana.ex.ui.main.home.HomeView
 import com.github.fajaragungpramana.ex.ui.main.profile.ProfileView
 import com.github.fajaragungpramana.ex.ui.main.statistic.StatisticView
 import com.github.fajaragungpramana.ex.ui.theme.ExTheme
+import com.github.fajaragungpramana.ex.widget.style.Black100
+import com.github.fajaragungpramana.ex.widget.style.White100
 
 object MainView {
 
@@ -49,11 +52,17 @@ object MainView {
                             text = stringResource(id = listBottomNavigationItem[navigationSelectedItem].label),
                             style = MaterialTheme.typography.titleLarge
                         )
-                    }
+                    },
+                    colors = TopAppBarDefaults.topAppBarColors(
+                        containerColor = White100,
+                        titleContentColor = Black100
+                    )
                 )
             },
             bottomBar = {
-                NavigationBar {
+                NavigationBar(
+                    containerColor = White100
+                ) {
 
                     listBottomNavigationItem.forEachIndexed { index, bottomNavigationItem ->
 
