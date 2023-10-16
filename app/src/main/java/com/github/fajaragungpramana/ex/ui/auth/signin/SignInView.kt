@@ -86,7 +86,6 @@ object SignInView {
                         .padding(top = 16.dp),
                     onClick = {
 
-
                     }) {
 
                     Text(
@@ -107,7 +106,7 @@ object SignInView {
                     modifier = Modifier
                         .fillMaxWidth(),
                     onClick = {
-
+                        navController?.navigate(MainViewRoute.MainView.route)
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Green100
