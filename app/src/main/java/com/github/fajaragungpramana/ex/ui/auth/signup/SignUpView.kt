@@ -1,4 +1,4 @@
-package com.github.fajaragungpramana.ex.ui.auth.signin
+package com.github.fajaragungpramana.ex.ui.auth.signup
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -27,16 +27,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.github.fajaragungpramana.ex.MainViewRoute
 import com.github.fajaragungpramana.ex.R
 import com.github.fajaragungpramana.ex.ui.theme.ExTheme
 import com.github.fajaragungpramana.ex.widget.component.LargeTopAppBarComponent
 import com.github.fajaragungpramana.ex.widget.component.OutlinedTextFieldComponent
 import com.github.fajaragungpramana.ex.widget.style.Green100
 
-object SignInView {
+object SignUpView {
 
     @Composable
     fun ContentView(navController: NavController?) {
@@ -44,15 +42,17 @@ object SignInView {
             topBar = {
 
                 LargeTopAppBarComponent.WithSubtitle(
-                    title = stringResource(id = R.string.sign_in),
-                    subtitle = stringResource(id = R.string.sign_in_description),
-                    onClickBackListener = { false }
+                    title = stringResource(id = R.string.sign_up),
+                    subtitle = stringResource(id = R.string.sign_up_description),
+                    onClickBackListener = { isEnable ->
+                        if (isEnable) navController?.navigateUp()
+
+                        true
+                    }
                 )
 
             }
         ) { paddingValues ->
-            val emailField = remember { mutableStateOf(TextFieldValue()) }
-            val passwordField = remember { mutableStateOf(TextFieldValue()) }
 
             Column(
                 modifier = Modifier
@@ -60,10 +60,23 @@ object SignInView {
                     .padding(horizontal = 16.dp)
                     .fillMaxSize()
             ) {
+                val nameField = remember { mutableStateOf(TextFieldValue()) }
+                val emailField = remember { mutableStateOf(TextFieldValue()) }
+                val passwordField = remember { mutableStateOf(TextFieldValue()) }
+                val passwordConfirmationField = remember { mutableStateOf(TextFieldValue()) }
 
                 OutlinedTextFieldComponent.Basic(
                     modifier = Modifier
                         .fillMaxWidth(),
+                    label = stringResource(id = R.string.full_name),
+                    value = nameField,
+                    singleLine = true
+                )
+
+                OutlinedTextFieldComponent.Basic(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 8.dp),
                     label = stringResource(id = R.string.email),
                     value = emailField,
                     singleLine = true,
@@ -80,23 +93,15 @@ object SignInView {
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
                 )
 
-                TextButton(
+                OutlinedTextFieldComponent.Basic(
                     modifier = Modifier
-                        .align(Alignment.End)
-                        .padding(top = 16.dp),
-                    onClick = {
-
-
-                    }) {
-
-                    Text(
-                        text = stringResource(id = R.string.forgot_password),
-                        style = MaterialTheme.typography.titleMedium,
-                        fontSize = 14.sp,
-                        color = Green100
-                    )
-
-                }
+                        .fillMaxWidth()
+                        .padding(top = 8.dp),
+                    label = stringResource(id = R.string.confirm_password),
+                    value = passwordConfirmationField,
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+                )
 
                 Spacer(
                     modifier = Modifier
@@ -116,7 +121,7 @@ object SignInView {
                 ) {
 
                     Text(
-                        text = stringResource(id = R.string.sign_in),
+                        text = stringResource(id = R.string.sign_up),
                         style = MaterialTheme.typography.titleMedium
                     )
 
@@ -127,18 +132,18 @@ object SignInView {
                         .wrapContentSize()
                         .align(alignment = Alignment.CenterHorizontally),
                     onClick = {
-                        navController?.navigate(MainViewRoute.SignUpView.route)
+                        navController?.navigateUp()
                     }) {
 
                     Text(
-                        text = stringResource(id = R.string.not_have_an_account),
+                        text = stringResource(id = R.string.already_have_an_account),
                         style = MaterialTheme.typography.bodySmall
                     )
 
                     Text(
                         modifier = Modifier
                             .padding(start = 4.dp),
-                        text = stringResource(id = R.string.sign_up),
+                        text = stringResource(id = R.string.sign_in),
                         style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.SemiBold,
                         color = Green100
@@ -155,7 +160,7 @@ object SignInView {
 
 @Preview(showBackground = true)
 @Composable
-fun SignIn_Preview() {
+fun SignUp_Preview() {
     ExTheme {
 
         Surface(
@@ -165,7 +170,7 @@ fun SignIn_Preview() {
             color = MaterialTheme.colorScheme.background
         ) {
 
-            SignInView.ContentView(
+            SignUpView.ContentView(
                 navController = null
             )
 
